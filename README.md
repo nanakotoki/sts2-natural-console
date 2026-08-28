@@ -41,7 +41,9 @@
 
 ## 安装
 
-1. 确保已安装 [BaseLib](https://github.com/Alchyr/BaseLib-StS2)（把 `BaseLib.dll/.json/.pck` 放进 `Slay the Spire 2/mods/BaseLib/`）。
+1. 先安装依赖 **BaseLib**（任选其一下载）：
+   - GitHub Releases：https://github.com/Alchyr/BaseLib-StS2/releases （下载最新 `BaseLib.3.4.5.zip`，解压后把 `BaseLib.dll / BaseLib.json / BaseLib.pck` 放进 `Slay the Spire 2/mods/BaseLib/`）
+   - Steam 创意工坊：https://steamcommunity.com/sharedfiles/filedetails/?id=3737335127 （订阅即自动安装更新）
 2. 把本模组 `NaturalConsole.dll` 和 `NaturalConsole.json` 放进 `Slay the Spire 2/mods/NaturalConsole/`。
 3. 启动游戏，进入一局对局后按 `F8`。
 
