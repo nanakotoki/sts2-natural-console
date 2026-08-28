@@ -100,40 +100,6 @@
 - 本模组为纯 C# 实现，无需 `.pck`（`has_pck: false`）。
 - 首次克隆后需自行创建 `Directory.Build.props`（参考模板，用于设置 Godot 路径）；游戏安装路径会自动发现，无需配置。
 
-## 打包与发布
-
-发布物只有两个文件：`NaturalConsole.dll` + `NaturalConsole.json`（依赖 BaseLib）。
-
-### 本地打包
-
-```powershell
-.\pack.ps1
-```
-
-会在 `release/` 生成 `NaturalConsole-v<版本>.zip`，解压到 `Slay the Spire 2/mods/` 即可（得到 `mods/NaturalConsole/...`）。
-
-### 发布到 GitHub
-
-1. 提交源码（`release/`、`.godot/`、`Directory.Build.props` 已被 `.gitignore` 忽略）：
-
-   ```powershell
-   git add .
-   git commit -m "v0.1.0"
-   git push
-   ```
-
-2. 打 tag 并用 `gh` 创建 Release：
-
-   ```powershell
-   git tag v0.1.0
-   git push origin v0.1.0
-   gh release create v0.1.0 release/NaturalConsole-v0.1.0.zip --title "NaturalConsole v0.1.0" --notes "见 README"
-   ```
-
-### 发布到 Steam 创意工坊（推荐给玩家）
-
-STS2 的创意工坊 AppID 是 `2868840`。用 [SteamWorkshop 上传工具](https://github.com/Alchyr/BaseLib-StS2/wiki) 或 `steamcmd` 上传，并在 `mod_manifest` 里声明 BaseLib 为依赖即可出现在游戏内模组管理器里。
-
 ## 目录结构
 
 ```
