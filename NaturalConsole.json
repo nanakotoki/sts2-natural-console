@@ -1,0 +1,14 @@
+﻿{
+  "id": "NaturalConsole",
+  "name": "自然语言控制台 Natural Console",
+  "author": "nanakotoki",
+  "description": "用自然语言（中文）输入即可执行控制台指令。按 F8 打开输入框。",
+  "version": "v0.1.0",
+  "min_game_version": "0.107.0",
+  "has_pck": false,
+  "has_dll": true,
+  "dependencies": [
+    {"id": "BaseLib", "min_version": "3.4.5"}
+  ],
+  "affects_gameplay": true
+}
