@@ -263,6 +263,12 @@ public partial class UiController : CanvasLayer
             return;
         }
 
+        if (IsClearRequest(trimmed))
+        {
+            _output.Clear();
+            return;
+        }
+
         ParseResult parsed = NaturalLanguageParser.Parse(trimmed);
         if (parsed.Choices != null)
         {
@@ -308,6 +314,12 @@ public partial class UiController : CanvasLayer
         return s is "帮助" or "help" or "怎么用" or "使用说明" or "功能" or "说明" or "指令" or "?" or "？";
     }
 
+    private static bool IsClearRequest(string t)
+    {
+        string s = t.Trim().ToLowerInvariant();
+        return s is "清屏" or "clear" or "清除" or "清空";
+    }
+
     private static string HelpText()
     {
         return
@@ -345,7 +357,7 @@ public partial class UiController : CanvasLayer
             "[color=#aaccff]操作[/color]\n" +
             "  ↑↓ 浏览历史指令，Tab 补全名称，Esc 关闭，输入“帮助”查看本说明。\n" +
             "  名字有歧义时会列出选项，输入序号选择即可。\n" +
-            "  配置 LLM 后，复杂句子会自动交给大模型翻译（见 README）。";
+            "  输入“清屏”或“clear”可清空输出。";
     }
 
     private void Append(string text)
